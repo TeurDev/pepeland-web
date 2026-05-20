@@ -1,0 +1,37 @@
+/* Theme: Pepeland 2 — paleta dorado, ámbar y marrón */
+.edition-pepeland2 {
+  --bg:        #120c06;
+  --bg2:       #1c1409;
+  --bg3:       #261b0d;
+  --bg4:       #382816;
+
+  /* "Pink" slot = oro principal de la edición */
+  --pink:      #f5b842;
+  --pink-dim:  #7a5a1f;
+  --pink-rgb:  245, 184, 66;
+  --btn-bg:        #3a1c14;
+  --btn-color:     #e8b4a0;
+  --btn-border:    #6b2e20;
+  --btn-border-hv: #c46040;
+  --btn-glow:      #8b4030;
+  --title:         #fff2cf;       /* crema pergamino para contrastar con el oro */
+  /* "Gold" slot = bronce/ámbar secundario */
+  --gold:      #d4742a;
+  --gold-text: #fff2cf;        /* texto de botón btn-gold más claro */
+  --gold-dim:  #5c3a1c;
+  --silver:    #d4d8e0;
+
+  --text:      #f4e8d0;
+  --text-dim:  #8a7860;
+
+  --font-px:   'Press Start 2P', monospace;
+  --font-vt:   'VT323', monospace;
+
+  --px-xs:  .6rem;
+  --px-sm:  .72rem;
+  --px-md:  .9rem;
+  --px-lg:  1.15rem;
+  --vt-sm:  1.3rem;
+  --vt-md:  1.45rem;
+  --vt-lg:  1.7rem;
+}

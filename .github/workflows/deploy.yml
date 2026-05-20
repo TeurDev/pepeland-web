@@ -1,0 +1,65 @@
+# ── Deploy a GitHub Pages (rama gh-pages) ────────────────────────────────
+# Se activa automáticamente al subir cambios a `main`, o manualmente desde
+# la pestaña Actions del repositorio (workflow_dispatch).
+#
+# Lo que hace:
+#   1. Hace checkout del código en main
+#   2. Instala dependencias y construye con `npm run build`
+#   3. Copia index.html → 404.html para que React Router funcione al refrescar
+#   4. Sube el contenido de dist/ a la rama gh-pages
+#
+# Antes de usarlo:
+#   - En vite.config.js, ajusta `base: '/nombre-de-tu-repo/'`
+#   - En Settings → Pages del repo, selecciona:
+#       Source: Deploy from a branch
+#       Branch: gh-pages  /  (root)
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gh-pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      # SPA fallback — al refrescar /vaelthor/historia GitHub Pages devuelve
+      # 404.html, que es una copia de index.html. React Router toma el control
+      # desde ahí y carga la ruta correcta.
+      - name: SPA fallback (404 → index)
+        run: cp dist/index.html dist/404.html
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          force_orphan: true
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
+          commit_message: 'Deploy: ${{ github.event.head_commit.message }}'
