@@ -30,61 +30,53 @@ export const facciones = [
 ]
 
 // ── Códigos de misiones ─────────────────────────────────────────────────────
-// Cada misión puede tener un objeto opcional `detalles` con info adicional:
-//   recompensa, coordenadas, dificultad, tiempo, requisitos[], notas
-// Si una misión no tiene `detalles`, el modal muestra que no hay info.
-//
-// Cada código se enlaza a una facción ('faccion-1', 'faccion-2', o 'faccion-3').
-// Las misiones son idénticas para las tres facciones — el progreso es independiente.
-// El liderazgo de la expedición se decide por la suma de puntos de TODAS las misiones,
-// no por una sola.
+// Misiones idénticas para las tres facciones. El liderazgo de la expedición
+// se decide por la suma de TODAS las misiones, no por una sola.
 
 export const codigosMisiones = {
 
   // ── INSTITUTO ASTRA ──────────────────────────────────────────────────────
-  'ASTRA-0001': {
-    jugador: 'Nombre del jugador',
+  'STR1209': {
+    jugador: 'ASTRA',
     faccion: 'faccion-1',
     misiones: {
       principales: [
         {
           titulo: 'Establecer el asentamiento institucional',
-          desc: 'Funda una sede en Vaelthor que sirva como base de operaciones para la expedición. Podrás construirla desde cero o adoptar un pueblo ya existente. Antes de la llegada de los investigadores se realizará una inspección oficial; solo los asentamientos aprobados recibirán la expedición.',
+          desc: 'Funda una sede en Vaelthor que sirva como base de la expedición. Puedes construirla desde cero o adoptar un pueblo existente. Se realizará una inspección antes de la llegada de los investigadores.',
           detalles: {
-            recompensa: 'Recompensa económica + Puntos de reputación con Helion (suman al cómputo total para el liderazgo de la expedición)',
+            recompensa: 'Dinero y reputación con Helion',
             coordenadas: 'Por determinar',
             dificultad: 'Alta',
-            tiempo: 'Sin límite (sujeto a inspección)',
+            tiempo: 'Sujeto a inspección',
             requisitos: [
-              'Ubicación a un mínimo de 1000 bloques de la Torre y el Bastión',
-              'Sede principal: edificio destinado a reuniones e investigación',
-              'Desde cero: casas habitables para los investigadores que arribarán',
-              'Pueblo existente: solo se exige la sede principal',
-              'Asentamiento seguro y cómodo para sus habitantes',
-              'Guardia activa e iluminación completa las 24 horas',
+              'A más de 1000 bloques de la Torre y el Bastión',
+              'Sede principal para reuniones e investigación',
+              'Si es desde cero: casas para los investigadores',
+              'Si es un pueblo existente: basta con la sede',
+              'Guardia activa e iluminación las 24h',
             ],
-            notas: 'Tras la inspección, las facciones aprobadas recibirán la llegada de investigadores. La recompensa contribuye al liderazgo de la expedición pero no lo decide por sí sola.',
+            notas: 'Solo los asentamientos aprobados recibirán la expedición. La recompensa suma puntos al liderazgo, pero no lo decide por sí sola.',
           },
         },
         // ── Misiones pendientes de activar ────────────────────────────────
         // {
-        //   titulo: 'Los restos de las antiguas civilizaciones',
-        //   desc: 'Recupera vestigios de las civilizaciones que habitaron Vaelthor antes que nosotros. Cuantos más restos se documenten, mayor será el reconocimiento de la institución.',
+        //   titulo: 'Restos de antiguas civilizaciones',
+        //   desc: 'Recupera vestigios de las civilizaciones que habitaron Vaelthor. Cuantos más restos documentes, más reconocimiento para la institución.',
         //   detalles: {
-        //     recompensa: 'Puntos de reputación acumulables por repetición',
+        //     recompensa: 'Reputación (acumulable por repetición)',
         //     dificultad: 'Media',
         //     requisitos: [
         //       'Mods: Archaeology, Better Archaeology, Collector\'s Caravan',
-        //       'Completar misiones del tablón del arqueólogo (FTB Quests)',
+        //       'Misiones del arqueólogo (FTB Quests)',
         //     ],
-        //     notas: 'Cada repetición de las misiones del arqueólogo suma puntos adicionales.',
         //   },
         // },
         // {
         //   titulo: 'Red de comunicaciones',
-        //   desc: 'Establece una red de mensajería que conecte tu asentamiento con los del resto de instituciones. Sin comunicación no hay expedición coordinada.',
+        //   desc: 'Establece una red de mensajería que conecte tu asentamiento con los del resto de instituciones.',
         //   detalles: {
-        //     recompensa: 'Recompensa económica',
+        //     recompensa: 'Dinero',
         //     dificultad: 'Media',
         //     requisitos: [
         //       'Mod: Envelope',
@@ -94,14 +86,11 @@ export const codigosMisiones = {
         // },
         // {
         //   titulo: 'Documentar el mundo',
-        //   desc: 'Registra Vaelthor mediante fotografías y reportes visuales. Cuanto más completo y detallado sea el documento entregado, mayor será la recompensa.',
+        //   desc: 'Registra Vaelthor mediante fotografías y reportes visuales. Cuanto más detallado, mayor la recompensa.',
         //   detalles: {
-        //     recompensa: 'Recompensa económica y reputación proporcionales a la calidad del documento',
+        //     recompensa: 'Dinero y reputación según la calidad del documento',
         //     dificultad: 'Variable',
-        //     requisitos: [
-        //       'Mod: Exposure',
-        //     ],
-        //     notas: 'Un documento superficial recibirá una valoración mínima; uno exhaustivo, la máxima.',
+        //     requisitos: ['Mod: Exposure'],
         //   },
         // },
       ],
@@ -111,49 +100,47 @@ export const codigosMisiones = {
   },
 
   // ── ESCUELA DE ARTILLERÍA DREDGE ─────────────────────────────────────────
-  'DREDGE-0001': {
-    jugador: 'Nombre del jugador',
+  'DRDG7364': {
+    jugador: 'DREDGE',
     faccion: 'faccion-2',
     misiones: {
       principales: [
         {
           titulo: 'Establecer el asentamiento institucional',
-          desc: 'Funda una sede en Vaelthor que sirva como base de operaciones para la expedición. Podrás construirla desde cero o adoptar un pueblo ya existente. Antes de la llegada de los investigadores se realizará una inspección oficial; solo los asentamientos aprobados recibirán la expedición.',
+          desc: 'Funda una sede en Vaelthor que sirva como base de la expedición. Puedes construirla desde cero o adoptar un pueblo existente. Se realizará una inspección antes de la llegada de los investigadores.',
           detalles: {
-            recompensa: 'Recompensa económica + Puntos de reputación con Helion (suman al cómputo total para el liderazgo de la expedición)',
+            recompensa: 'Dinero y reputación con Helion',
             coordenadas: 'Por determinar',
             dificultad: 'Alta',
-            tiempo: 'Sin límite (sujeto a inspección)',
+            tiempo: 'Sujeto a inspección',
             requisitos: [
-              'Ubicación a un mínimo de 1000 bloques de la Torre y el Bastión',
-              'Sede principal: edificio destinado a reuniones e investigación',
-              'Desde cero: casas habitables para los investigadores que arribarán',
-              'Pueblo existente: solo se exige la sede principal',
-              'Asentamiento seguro y cómodo para sus habitantes',
-              'Guardia activa e iluminación completa las 24 horas',
+              'A más de 1000 bloques de la Torre y el Bastión',
+              'Sede principal para reuniones e investigación',
+              'Si es desde cero: casas para los investigadores',
+              'Si es un pueblo existente: basta con la sede',
+              'Guardia activa e iluminación las 24h',
             ],
-            notas: 'Tras la inspección, las facciones aprobadas recibirán la llegada de investigadores. La recompensa contribuye al liderazgo de la expedición pero no lo decide por sí sola.',
+            notas: 'Solo los asentamientos aprobados recibirán la expedición. La recompensa suma puntos al liderazgo, pero no lo decide por sí sola.',
           },
         },
         // ── Misiones pendientes de activar ────────────────────────────────
         // {
-        //   titulo: 'Los restos de las antiguas civilizaciones',
-        //   desc: 'Recupera vestigios de las civilizaciones que habitaron Vaelthor antes que nosotros. Cuantos más restos se documenten, mayor será el reconocimiento de la institución.',
+        //   titulo: 'Restos de antiguas civilizaciones',
+        //   desc: 'Recupera vestigios de las civilizaciones que habitaron Vaelthor. Cuantos más restos documentes, más reconocimiento para la institución.',
         //   detalles: {
-        //     recompensa: 'Puntos de reputación acumulables por repetición',
+        //     recompensa: 'Reputación (acumulable por repetición)',
         //     dificultad: 'Media',
         //     requisitos: [
         //       'Mods: Archaeology, Better Archaeology, Collector\'s Caravan',
-        //       'Completar misiones del tablón del arqueólogo (FTB Quests)',
+        //       'Misiones del arqueólogo (FTB Quests)',
         //     ],
-        //     notas: 'Cada repetición de las misiones del arqueólogo suma puntos adicionales.',
         //   },
         // },
         // {
         //   titulo: 'Red de comunicaciones',
-        //   desc: 'Establece una red de mensajería que conecte tu asentamiento con los del resto de instituciones. Sin comunicación no hay expedición coordinada.',
+        //   desc: 'Establece una red de mensajería que conecte tu asentamiento con los del resto de instituciones.',
         //   detalles: {
-        //     recompensa: 'Recompensa económica',
+        //     recompensa: 'Dinero',
         //     dificultad: 'Media',
         //     requisitos: [
         //       'Mod: Envelope',
@@ -163,14 +150,11 @@ export const codigosMisiones = {
         // },
         // {
         //   titulo: 'Documentar el mundo',
-        //   desc: 'Registra Vaelthor mediante fotografías y reportes visuales. Cuanto más completo y detallado sea el documento entregado, mayor será la recompensa.',
+        //   desc: 'Registra Vaelthor mediante fotografías y reportes visuales. Cuanto más detallado, mayor la recompensa.',
         //   detalles: {
-        //     recompensa: 'Recompensa económica y reputación proporcionales a la calidad del documento',
+        //     recompensa: 'Dinero y reputación según la calidad del documento',
         //     dificultad: 'Variable',
-        //     requisitos: [
-        //       'Mod: Exposure',
-        //     ],
-        //     notas: 'Un documento superficial recibirá una valoración mínima; uno exhaustivo, la máxima.',
+        //     requisitos: ['Mod: Exposure'],
         //   },
         // },
       ],
@@ -180,49 +164,47 @@ export const codigosMisiones = {
   },
 
   // ── INSTITUTO POLARIS ────────────────────────────────────────────────────
-  'POLARIS-0001': {
-    jugador: 'Nombre del jugador',
+  'PLRS1298': {
+    jugador: 'POLARIS',
     faccion: 'faccion-3',
     misiones: {
       principales: [
         {
           titulo: 'Establecer el asentamiento institucional',
-          desc: 'Funda una sede en Vaelthor que sirva como base de operaciones para la expedición. Podrás construirla desde cero o adoptar un pueblo ya existente. Antes de la llegada de los investigadores se realizará una inspección oficial; solo los asentamientos aprobados recibirán la expedición.',
+          desc: 'Funda una sede en Vaelthor que sirva como base de la expedición. Puedes construirla desde cero o adoptar un pueblo existente. Se realizará una inspección antes de la llegada de los investigadores.',
           detalles: {
-            recompensa: 'Recompensa económica + Puntos de reputación con Helion (suman al cómputo total para el liderazgo de la expedición)',
+            recompensa: 'Dinero y reputación con Helion',
             coordenadas: 'Por determinar',
             dificultad: 'Alta',
-            tiempo: 'Sin límite (sujeto a inspección)',
+            tiempo: 'Sujeto a inspección',
             requisitos: [
-              'Ubicación a un mínimo de 1000 bloques de la Torre y el Bastión',
-              'Sede principal: edificio destinado a reuniones e investigación',
-              'Desde cero: casas habitables para los investigadores que arribarán',
-              'Pueblo existente: solo se exige la sede principal',
-              'Asentamiento seguro y cómodo para sus habitantes',
-              'Guardia activa e iluminación completa las 24 horas',
+              'A más de 1000 bloques de la Torre y el Bastión',
+              'Sede principal para reuniones e investigación',
+              'Si es desde cero: casas para los investigadores',
+              'Si es un pueblo existente: basta con la sede',
+              'Guardia activa e iluminación las 24h',
             ],
-            notas: 'Tras la inspección, las facciones aprobadas recibirán la llegada de investigadores. La recompensa contribuye al liderazgo de la expedición pero no lo decide por sí sola.',
+            notas: 'Solo los asentamientos aprobados recibirán la expedición. La recompensa suma puntos al liderazgo, pero no lo decide por sí sola.',
           },
         },
         // ── Misiones pendientes de activar ────────────────────────────────
         // {
-        //   titulo: 'Los restos de las antiguas civilizaciones',
-        //   desc: 'Recupera vestigios de las civilizaciones que habitaron Vaelthor antes que nosotros. Cuantos más restos se documenten, mayor será el reconocimiento de la institución.',
+        //   titulo: 'Restos de antiguas civilizaciones',
+        //   desc: 'Recupera vestigios de las civilizaciones que habitaron Vaelthor. Cuantos más restos documentes, más reconocimiento para la institución.',
         //   detalles: {
-        //     recompensa: 'Puntos de reputación acumulables por repetición',
+        //     recompensa: 'Reputación (acumulable por repetición)',
         //     dificultad: 'Media',
         //     requisitos: [
         //       'Mods: Archaeology, Better Archaeology, Collector\'s Caravan',
-        //       'Completar misiones del tablón del arqueólogo (FTB Quests)',
+        //       'Misiones del arqueólogo (FTB Quests)',
         //     ],
-        //     notas: 'Cada repetición de las misiones del arqueólogo suma puntos adicionales.',
         //   },
         // },
         // {
         //   titulo: 'Red de comunicaciones',
-        //   desc: 'Establece una red de mensajería que conecte tu asentamiento con los del resto de instituciones. Sin comunicación no hay expedición coordinada.',
+        //   desc: 'Establece una red de mensajería que conecte tu asentamiento con los del resto de instituciones.',
         //   detalles: {
-        //     recompensa: 'Recompensa económica',
+        //     recompensa: 'Dinero',
         //     dificultad: 'Media',
         //     requisitos: [
         //       'Mod: Envelope',
@@ -232,14 +214,11 @@ export const codigosMisiones = {
         // },
         // {
         //   titulo: 'Documentar el mundo',
-        //   desc: 'Registra Vaelthor mediante fotografías y reportes visuales. Cuanto más completo y detallado sea el documento entregado, mayor será la recompensa.',
+        //   desc: 'Registra Vaelthor mediante fotografías y reportes visuales. Cuanto más detallado, mayor la recompensa.',
         //   detalles: {
-        //     recompensa: 'Recompensa económica y reputación proporcionales a la calidad del documento',
+        //     recompensa: 'Dinero y reputación según la calidad del documento',
         //     dificultad: 'Variable',
-        //     requisitos: [
-        //       'Mod: Exposure',
-        //     ],
-        //     notas: 'Un documento superficial recibirá una valoración mínima; uno exhaustivo, la máxima.',
+        //     requisitos: ['Mod: Exposure'],
         //   },
         // },
       ],
