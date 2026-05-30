@@ -9,7 +9,7 @@ const chapters = [
 
   {
     id: 'introduccion',
-    title: 'I · Introducción',
+    title: 'Introducción',
     body: (
       <>
         <p>
@@ -42,7 +42,7 @@ const chapters = [
 
   {
     id: 'continentes',
-    title: 'II · Los dos continentes',
+    title: 'Los dos continentes',
     body: (
       <>
         <p>
@@ -77,7 +77,7 @@ const chapters = [
 
   {
     id: 'helion',
-    title: 'III · El archipiélago de Helion',
+    title: 'El archipiélago de Helion',
     body: (
       <>
         <p>
@@ -135,7 +135,7 @@ const chapters = [
 
   {
     id: 'instituciones',
-    title: 'IV · Las tres instituciones',
+    title: 'Las tres instituciones',
     body: (
       <>
         <p>
@@ -197,7 +197,7 @@ const chapters = [
 
   {
     id: 'expediciones',
-    title: 'V · Las expediciones a Vaelthor',
+    title: 'Las expediciones a Vaelthor',
     body: (
       <>
         <p>
@@ -255,7 +255,7 @@ const chapters = [
 
   {
     id: 'operacion-horizonte',
-    title: 'VI · Operación Horizonte',
+    title: 'Operación Horizonte',
     body: (
       <>
         <p>
@@ -280,7 +280,7 @@ const chapters = [
 
   {
     id: 'tribus',
-    title: 'VII · Las tribus de Vaelthor',
+    title: 'Las tribus de Vaelthor',
     body: (
       <>
         <p>
@@ -355,7 +355,7 @@ const chapters = [
 
   {
     id: 'independientes',
-    title: 'VIII · Exploradores independientes y el Pacto de Ceniza',
+    title: 'Exploradores independientes y el Pacto de Ceniza',
     body: (
       <>
         <p>
@@ -396,7 +396,7 @@ const chapters = [
 
   {
     id: 'resumen',
-    title: 'IX · Resumen',
+    title: 'Resumen',
     body: (
       <>
         <p>
