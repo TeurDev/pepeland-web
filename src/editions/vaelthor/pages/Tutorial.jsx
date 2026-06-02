@@ -27,8 +27,8 @@ const tutoriales = [
   },
   {
     id: 'tutorial-3',
-    titulo: 'Mecánicas especiales',
-    videoId: 'oGY32HRZTa4',
+    titulo: 'Cómo unirse al Servidor',
+    videoId: 'VagOLPvY3Is',
     steps: [
       'Aquí explicas la mecánica especial 1.',
       'Paso 2 de la mecánica.',
