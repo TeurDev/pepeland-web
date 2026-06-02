@@ -3,8 +3,8 @@ import WikiSidebar from '@shared/components/WikiSidebar'
 const tutoriales = [
   {
     id: 'tutorial-1',
-    titulo: 'Cómo conectarte al servidor',
-    videoId: 'dQw4w9WgXcQ',
+    titulo: 'Presentación del servidor',
+    videoId: 'PzfDBxwNasA',
     steps: [
       'Abre Minecraft Java Edition (versión X.X).',
       'Ve a Multijugador → Añadir servidor.',
@@ -15,8 +15,8 @@ const tutoriales = [
   },
   {
     id: 'tutorial-2',
-    titulo: 'Unirse a una facción',
-    videoId: 'dQw4w9WgXcQ',
+    titulo: 'Cómo instalar los mods',
+    videoId: 'MdSTirhomNM',
     steps: [
       'Habla con el NPC de facciones en el spawn.',
       'Lee la descripción de cada facción.',
@@ -28,7 +28,7 @@ const tutoriales = [
   {
     id: 'tutorial-3',
     titulo: 'Mecánicas especiales',
-    videoId: 'dQw4w9WgXcQ',
+    videoId: 'oGY32HRZTa4',
     steps: [
       'Aquí explicas la mecánica especial 1.',
       'Paso 2 de la mecánica.',
