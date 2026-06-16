@@ -1,7 +1,7 @@
 // ── Galería de Vaelthor ──────────────────────────────────────────────────
 // CÓMO AÑADIR FOTOS:
 //   1) Mete las imágenes en  ./assets/gallery/
-//   2) Añade el nombre del archivo al array `imagenes` de abajo.
+//   2) ¡Listo! Aparecen automáticamente.
 //
 // Las primeras 4 fotos (por orden alfabético) salen en el carrousel.
 // El nombre del archivo se usa como título (sin extensión, guiones → espacios).
@@ -11,7 +11,8 @@
 //   'despertar.jpg': { titulo: 'El Despertar', descripcion: '...', destacada: true }
 
 const metadata = {
-   'yo.png':            { titulo: 'Admin del server',            descripcion: 'El administrador del server saltando en su primera foto' , destacada: true},
+   '1atardecer.png':    { titulo: 'Atardecer',            descripcion: 'Atardecer en el horizonte' , destacada: true},
+   '1yo.png':           { titulo: 'Admin del server',            descripcion: 'El administrador del server saltando en su primera foto' , destacada: true},
    'adfredianx1.png':   { titulo: 'Adfredianx',   descripcion: 'Adfredianx siendo Adfredianx' },
    'adfredianx2.png':   { titulo: 'Adfredianx y los Golems',   descripcion: 'Adfredianx salio papeado de esta dungeon' },
    'gatosypaloma.png':  { titulo: 'Caceria',  descripcion: 'Manada de gatos intentan cazar a la paloma', destacada: true  },
@@ -23,30 +24,23 @@ const metadata = {
   // 'zombie.png':        { titulo: 'Zombie',        descripcion: '' },
 }
 
-// ── Imágenes de la galería ───────────────────────────────────────────────
-const imagenes = [
-  'yo.png',
-  'adfredianx1.png',
-  'adfredianx2.png',
-  'gatosypaloma.png',
-  'gatosypaloma2.png',
-  'golem.png',
-  'minion.png',
-  'sedeastra.png',
-  'zombie.png',
-  'Tuto.png',
-]
+// ── Auto-detección de imágenes ───────────────────────────────────────────
+const modules = import.meta.glob(
+  './assets/gallery/*.{jpg,jpeg,png,webp,gif}',
+  { eager: true, query: '?url', import: 'default' }
+)
 
-export const galeria = [...imagenes]
-  .sort((a, b) => a.localeCompare(b))
-  .map((filename, i) => {
+export const galeria = Object.entries(modules)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([path, url], i) => {
+    const filename = path.split('/').pop()
     const meta = metadata[filename] || {}
     const name = filename.split('.')[0].replace(/[-_]/g, ' ')
 
     return {
       id: `foto-${String(i + 1).padStart(2, '0')}`,
-      src: `./assets/gallery/${filename}`,
-      thumb: `./assets/gallery/${filename}`,
+      src: url,
+      thumb: url,
       titulo: meta.titulo || name.charAt(0).toUpperCase() + name.slice(1),
       descripcion: meta.descripcion || '',
       destacada: meta.destacada ?? i < 4,
