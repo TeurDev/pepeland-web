@@ -1,7 +1,7 @@
 // ── Galería de Vaelthor ──────────────────────────────────────────────────
 // CÓMO AÑADIR FOTOS:
 //   1) Mete las imágenes en  ./assets/gallery/
-//   2) ¡Listo! Aparecen automáticamente.
+//   2) Añade el nombre del archivo al array `imagenes` de abajo.
 //
 // Las primeras 4 fotos (por orden alfabético) salen en el carrousel.
 // El nombre del archivo se usa como título (sin extensión, guiones → espacios).
@@ -11,27 +11,42 @@
 //   'despertar.jpg': { titulo: 'El Despertar', descripcion: '...', destacada: true }
 
 const metadata = {
-  // 'despertar.jpg': { titulo: 'El Despertar de Vaelthor', descripcion: 'La primera incursión.', destacada: true },
-  // 'ruinas.jpg':    { titulo: 'Ruinas del Norte',         descripcion: 'Donde se selló el pacto.' },
+   'yo.png':            { titulo: 'Admin del server',            descripcion: 'El administrador del server saltando en su primera foto' , destacada: true},
+   'adfredianx1.png':   { titulo: 'Adfredianx',   descripcion: 'Adfredianx siendo Adfredianx' },
+   'adfredianx2.png':   { titulo: 'Adfredianx y los Golems',   descripcion: 'Adfredianx salio papeado de esta dungeon' },
+   'gatosypaloma.png':  { titulo: 'Caceria',  descripcion: 'Manada de gatos intentan cazar a la paloma', destacada: true  },
+   'gatosypaloma2.png': { titulo: 'Paloma y gato escondido', descripcion: 'Suerte si encuentras al gato' },
+   'golem.png':         { titulo: 'Golems Perdidos',         descripcion: 'Un golem perdido en el subsuelo' },
+   'minion.png':        { titulo: 'Minion',        descripcion: 'Minion fiel amigo de RusikoElGuapiko', destacada: true },
+   'sedeastra.png':     { titulo: 'Sede Astra',     descripcion: 'Aldeanos de la Sede Astra'},
+  // 'Tuto.png':          { titulo: 'Tuto',          descripcion: '' },
+  // 'zombie.png':        { titulo: 'Zombie',        descripcion: '' },
 }
 
-// ── Auto-detección de imágenes ───────────────────────────────────────────
-const modules = import.meta.glob(
-  './assets/gallery/*.{jpg,jpeg,png,webp,gif}',
-  { eager: true, query: '?url', import: 'default' }
-)
+// ── Imágenes de la galería ───────────────────────────────────────────────
+const imagenes = [
+  'yo.png',
+  'adfredianx1.png',
+  'adfredianx2.png',
+  'gatosypaloma.png',
+  'gatosypaloma2.png',
+  'golem.png',
+  'minion.png',
+  'sedeastra.png',
+  'zombie.png',
+  'Tuto.png',
+]
 
-export const galeria = Object.entries(modules)
-  .sort(([a], [b]) => a.localeCompare(b))
-  .map(([path, url], i) => {
-    const filename = path.split('/').pop()
+export const galeria = [...imagenes]
+  .sort((a, b) => a.localeCompare(b))
+  .map((filename, i) => {
     const meta = metadata[filename] || {}
     const name = filename.split('.')[0].replace(/[-_]/g, ' ')
 
     return {
       id: `foto-${String(i + 1).padStart(2, '0')}`,
-      src: url,
-      thumb: url,
+      src: `./assets/gallery/${filename}`,
+      thumb: `./assets/gallery/${filename}`,
       titulo: meta.titulo || name.charAt(0).toUpperCase() + name.slice(1),
       descripcion: meta.descripcion || '',
       destacada: meta.destacada ?? i < 4,

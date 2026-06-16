@@ -59,6 +59,20 @@ export const codigosMisiones = {
             notas: 'Solo los asentamientos aprobados recibirán la expedición. La recompensa suma puntos al liderazgo, pero no lo decide por sí sola.',
           },
         },
+        {
+          titulo: 'Construir la primera aeronave',
+          desc: 'Diseña y construye desde cero una aeronave funcional con Create: Aeronautics. Debe poder despegar, volar y ser pilotada. Astra debe demostrar que domina los cielos de Vaelthor.',
+          detalles: {
+            recompensa: 'Dinero y reputación con Helion',
+            dificultad: 'Alta',
+            requisitos: [
+              'Mods: Create, Sable y Create: Aeronautics',
+              'Aeronave funcional: despegue, vuelo y control reales',
+              'Construida desde cero, no copiada de un esquema',
+              'Construir una segunda aeronave y dejarla en la sede de otra institución, accesible para cualquier jugador',
+            ],
+          },
+        },
         // ── Misiones pendientes de activar ────────────────────────────────
         // {
         //   titulo: 'Restos de antiguas civilizaciones',
@@ -114,13 +128,31 @@ export const codigosMisiones = {
             dificultad: 'Alta',
             tiempo: 'Sujeto a inspección',
             requisitos: [
-              'A más de 1000 bloques de la Torre y el Bastión',
               'Sede principal para reuniones e investigación',
               'Si es desde cero: casas para los investigadores',
               'Si es un pueblo existente: basta con la sede',
               'Guardia activa e iluminación las 24h',
+              'Construir una fábrica de Create en superficie, a las afueras de la sede y separada de ella, con cadena de montaje funcional (mezcladora, trituradoras, desplegadores, prensa mecánica y cintas), de uso público para cualquier jugador',
             ],
             notas: 'Solo los asentamientos aprobados recibirán la expedición. La recompensa suma puntos al liderazgo, pero no lo decide por sí sola.',
+          },
+        },
+        {
+          titulo: 'Maquinaria pesada al servicio de la expedición',
+          desc: 'Dredge debe escoger UNA de las dos opciones y completarla por entero. Una vez elegida, deberá cumplir todos sus objetivos.',
+          detalles: {
+            recompensa: 'Dinero y reputación con Helion',
+            dificultad: 'Alta',
+            requisitos: [
+              'OPCIÓN A — Línea ferroviaria (mod Create):',
+              'Conectar la Torre Alba con la sede de Dredge mediante una línea de trenes con estaciones en ambos extremos',
+              'El trazado debe bordear el pueblo de la Torre sin destrozar ni alterar el entorno',
+              'Tren ensamblado y funcional sobre la línea',
+              'Montar una versión reducida (un tren más corto) en otra sede',
+              'OPCIÓN B — Batería de cañones (mod Create: Big Cannons):',
+              'Montar una batería de cañones de defensa funcional en la sede, capaz de apuntar y disparar',
+              'Montar una batería de menor tamaño en otra sede',
+            ],
           },
         },
         // ── Misiones pendientes de activar ────────────────────────────────
@@ -170,21 +202,17 @@ export const codigosMisiones = {
     misiones: {
       principales: [
         {
-          titulo: 'Establecer el asentamiento institucional',
-          desc: 'Funda una sede en Vaelthor que sirva como base de la expedición. Puedes construirla desde cero o adoptar un pueblo existente. Se realizará una inspección antes de la llegada de los investigadores.',
+          titulo: 'Conectar la sede con la Torre Alba',
+          desc: 'Usando Tempad, Polaris debe mejorar la conexión entre la Torre Alba y su sede, de forma que cualquier jugador pueda viajar de una a otra sin dificultad.',
           detalles: {
             recompensa: 'Dinero y reputación con Helion',
-            coordenadas: 'Por determinar',
-            dificultad: 'Alta',
-            tiempo: 'Sujeto a inspección',
+            dificultad: 'Media',
             requisitos: [
-              'A más de 1000 bloques de la Torre y el Bastión',
-              'Sede principal para reuniones e investigación',
-              'Si es desde cero: casas para los investigadores',
-              'Si es un pueblo existente: basta con la sede',
-              'Guardia activa e iluminación las 24h',
+              'Mod: Tempad',
+              'Punto de teletransporte estable y de acceso público entre la Torre Alba y la sede de Polaris',
+              'Suministro de Chronons suficiente para mantenerlo operativo',
+              'Montar también un teletransporte desde otra sede hasta la Torre Alba, accesible para cualquier jugador',
             ],
-            notas: 'Solo los asentamientos aprobados recibirán la expedición. La recompensa suma puntos al liderazgo, pero no lo decide por sí sola.',
           },
         },
         // ── Misiones pendientes de activar ────────────────────────────────
@@ -223,7 +251,26 @@ export const codigosMisiones = {
         // },
       ],
       secundarias: [],
-      completadas: [],
+      completadas: [
+        {
+          titulo: 'Establecer el asentamiento institucional',
+          desc: 'Funda una sede en Vaelthor que sirva como base de la expedición. Puedes construirla desde cero o adoptar un pueblo existente. Se realizará una inspección antes de la llegada de los investigadores.',
+          detalles: {
+            recompensa: 'Dinero y reputación con Helion',
+            coordenadas: 'Por determinar',
+            dificultad: 'Alta',
+            tiempo: 'Sujeto a inspección',
+            requisitos: [
+              'A más de 1000 bloques de la Torre y el Bastión',
+              'Sede principal para reuniones e investigación',
+              'Si es desde cero: casas para los investigadores',
+              'Si es un pueblo existente: basta con la sede',
+              'Guardia activa e iluminación las 24h',
+            ],
+            notas: 'Solo los asentamientos aprobados recibirán la expedición. La recompensa suma puntos al liderazgo, pero no lo decide por sí sola.',
+          },
+        },
+      ],
     },
   },
 
