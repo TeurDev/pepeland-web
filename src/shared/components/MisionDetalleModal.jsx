@@ -106,7 +106,7 @@ function Corners({ accent }) {
 
 // ── Componente Stat individual ────────────────────────────────────────────
 function Stat({ icon: Icon, label, value, accent, delay = 0 }) {
-  const empty = !value
+  const empty = Array.isArray(value) ? value.length === 0 : !value
   return (
     <div
       style={{
@@ -133,16 +133,42 @@ function Stat({ icon: Icon, label, value, accent, delay = 0 }) {
         }}>
           {label}
         </p>
-        <p style={{
-          fontFamily: 'var(--font-vt)',
-          fontSize: 'var(--vt-md)',
-          color: empty ? 'var(--text-dim)' : 'var(--text)',
-          fontStyle: empty ? 'italic' : 'normal',
-          lineHeight: 1.4,
-          wordBreak: 'break-word',
-        }}>
-          {value || 'Sin información'}
-        </p>
+        {Array.isArray(value) ? (
+          <ul style={{
+            listStyle: 'none',
+            margin: 0,
+            padding: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '.35rem',
+          }}>
+            {value.map((item, i) => (
+              <li key={i} style={{
+                fontFamily: 'var(--font-vt)',
+                fontSize: 'var(--vt-md)',
+                color: 'var(--text)',
+                lineHeight: 1.4,
+                wordBreak: 'break-word',
+                display: 'flex',
+                gap: '.5rem',
+              }}>
+                <span style={{ color: accent, flexShrink: 0 }}>›</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p style={{
+            fontFamily: 'var(--font-vt)',
+            fontSize: 'var(--vt-md)',
+            color: empty ? 'var(--text-dim)' : 'var(--text)',
+            fontStyle: empty ? 'italic' : 'normal',
+            lineHeight: 1.4,
+            wordBreak: 'break-word',
+          }}>
+            {value || 'Sin información'}
+          </p>
+        )}
       </div>
     </div>
   )
@@ -169,7 +195,7 @@ export default function MisionDetalleModal({ mision, accent, onClose }) {
   }, [handleClose])
 
   const d = mision.detalles || {}
-  const requisitosText = d.requisitos?.length ? d.requisitos.join(' · ') : null
+  const requisitosList = d.requisitos?.length ? d.requisitos : null
 
   return createPortal(
     <div className={`mision-modal-backdrop ${closing ? "modal-closing" : ""}`} onClick={handleClose}>
@@ -236,7 +262,7 @@ export default function MisionDetalleModal({ mision, accent, onClose }) {
             <Stat icon={IconCompass}   label="COORDENADAS" value={d.coordenadas}  accent={accent} delay={0.22} />
             <Stat icon={IconSkull}     label="DIFICULTAD"  value={d.dificultad}   accent={accent} delay={0.29} />
             <Stat icon={IconHourglass} label="DURACIÓN"    value={d.tiempo}       accent={accent} delay={0.36} />
-            <Stat icon={IconScroll}    label="REQUISITOS"  value={requisitosText} accent={accent} delay={0.43} />
+            <Stat icon={IconScroll}    label="REQUISITOS"  value={requisitosList} accent={accent} delay={0.43} />
             <Stat icon={IconFeather}   label="NOTAS"       value={d.notas}        accent={accent} delay={0.50} />
           </div>
 

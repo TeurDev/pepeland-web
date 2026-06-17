@@ -772,7 +772,7 @@ button[aria-label="Cerrar"]:hover {
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
-  overflow-y: auto;
+  overflow: hidden;
   animation: fadeIn .25s ease;
 }
 
@@ -780,7 +780,9 @@ button[aria-label="Cerrar"]:hover {
   position: relative;
   max-width: 720px;
   width: 100%;
+  max-height: calc(100dvh - 4rem);
   padding: 12px;
+  display: flex;
   animation: detalleIn .45s cubic-bezier(.34,1.56,.64,1);
 }
 
@@ -788,11 +790,16 @@ button[aria-label="Cerrar"]:hover {
   background: var(--bg2);
   padding: 2.5rem 2rem 2rem;
   position: relative;
+  width: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .mision-modal-close {
-  position: absolute;
-  top: .7rem; right: .7rem;
+  position: sticky;
+  top: 0;
+  margin-left: auto;
+  margin-bottom: -1rem;
   background: var(--bg);
   font-family: var(--font-px);
   font-size: 13px;
@@ -818,6 +825,9 @@ button[aria-label="Cerrar"]:hover {
 @media (max-width: 600px) {
   .mision-modal-backdrop {
     padding: 1rem .6rem;
+  }
+  .mision-modal-wrapper {
+    max-height: calc(100dvh - 2rem);
   }
   .mision-modal-card {
     padding: 2rem 1.2rem 1.5rem;
