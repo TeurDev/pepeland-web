@@ -11,7 +11,7 @@
 //   'despertar.jpg': { titulo: 'El Despertar', descripcion: '...', destacada: true }
 
 const metadata = {
-   '1atardecer.png':    { titulo: 'Atardecer',            descripcion: 'Atardecer en el horizonte' , destacada: true},
+   'atardecer.png':    { titulo: 'Atardecer',            descripcion: 'Atardecer en el horizonte' , destacada: true},
    '1yo.png':           { titulo: 'Admin del server',            descripcion: 'El administrador del server saltando en su primera foto' , destacada: true},
    'adfredianx1.png':   { titulo: 'Adfredianx',   descripcion: 'Adfredianx siendo Adfredianx' },
    'adfredianx2.png':   { titulo: 'Adfredianx y los Golems',   descripcion: 'Adfredianx salio papeado de esta dungeon' },
