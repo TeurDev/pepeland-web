@@ -61,7 +61,7 @@ export const codigosMisiones = {
         },
         {
           titulo: 'Construir la primera aeronave',
-          desc: 'Diseña y construye desde cero una aeronave funcional con Create: Aeronautics. Debe poder despegar, volar y ser pilotada. Astra debe demostrar que domina los cielos de Vaelthor.',
+          desc: 'Diseña y construye desde cero una aeronave funcional con Create: Aeronautics. Astra debe demostrar que domina los cielos de Vaelthor y poner esa movilidad al servicio de toda la expedición.',
           detalles: {
             recompensa: 'Dinero y reputación con Helion',
             dificultad: 'Alta',
@@ -69,8 +69,9 @@ export const codigosMisiones = {
               'Mods: Create, Sable y Create: Aeronautics',
               'Aeronave funcional: despegue, vuelo y control reales',
               'Construida desde cero, no copiada de un esquema',
-              'Construir una segunda aeronave y dejarla en la sede de otra institución, accesible para cualquier jugador',
+              'Construir y entregar una aeronave a cada una de las demás sedes',
             ],
+            notas: 'Cada sede debe quedar con su propia aeronave accesible para cualquier jugador. El objetivo no es solo volar, sino dotar de movilidad aérea a toda la expedición.',
           },
         },
         // ── Misiones pendientes de activar ────────────────────────────────
@@ -132,27 +133,39 @@ export const codigosMisiones = {
               'Si es desde cero: casas para los investigadores',
               'Si es un pueblo existente: basta con la sede',
               'Guardia activa e iluminación las 24h',
-              'Construir una fábrica de Create en superficie, a las afueras de la sede y separada de ella, con cadena de montaje funcional (mezcladora, trituradoras, desplegadores, prensa mecánica y cintas), de uso público para cualquier jugador',
+              'Construir una fábrica de Create en superficie con cadena de montaje funcional (mezcladora, trituradoras, desplegadores, prensa mecánica y cintas), de uso público para cualquier jugador',
             ],
-            notas: 'Solo los asentamientos aprobados recibirán la expedición. La recompensa suma puntos al liderazgo, pero no lo decide por sí sola.',
+            notas: 'La fábrica debe estar en superficie, a las afueras de la sede y separada de ella. Solo los asentamientos aprobados recibirán la expedición. La recompensa suma puntos al liderazgo, pero no lo decide por sí sola.',
           },
         },
         {
-          titulo: 'Maquinaria pesada al servicio de la expedición',
-          desc: 'Dredge debe escoger UNA de las dos opciones y completarla por entero. Una vez elegida, deberá cumplir todos sus objetivos.',
+          titulo: 'Maquinaria pesada al servicio de la expedición (1/2) · Vía férrea',
+          desc: 'Esta misión y la "(2/2) · Batería de cañones" son excluyentes: Dredge elige UNA de las dos, no ambas. Si eliges esta, deberás tender una red ferroviaria que conecte toda la expedición.',
           detalles: {
             recompensa: 'Dinero y reputación con Helion',
             dificultad: 'Alta',
             requisitos: [
-              'OPCIÓN A — Línea ferroviaria (mod Create):',
-              'Conectar la Torre Alba con la sede de Dredge mediante una línea de trenes con estaciones en ambos extremos',
-              'El trazado debe bordear el pueblo de la Torre sin destrozar ni alterar el entorno',
-              'Tren ensamblado y funcional sobre la línea',
-              'Montar una versión reducida (un tren más corto) en otra sede',
-              'OPCIÓN B — Batería de cañones (mod Create: Big Cannons):',
-              'Montar una batería de cañones de defensa funcional en la sede, capaz de apuntar y disparar',
-              'Montar una batería de menor tamaño en otra sede',
+              'Mod: Create',
+              'Estación principal en la Torre Alba como origen de la línea',
+              'Línea que se propague desde la Torre Alba y pase por todas las sedes, Dredge incluida',
+              'Estación funcional en cada sede conectada',
+              'Tren ensamblado y funcional recorriendo la línea',
             ],
+            notas: 'El trazado no debe alterar ni destrozar el terreno: rodea los obstáculos y respeta el entorno. Elige esta opción O la (2/2), nunca las dos.',
+          },
+        },
+        {
+          titulo: 'Maquinaria pesada al servicio de la expedición (2/2) · Batería de cañones',
+          desc: 'Esta misión y la "(1/2) · Vía férrea" son excluyentes: Dredge elige UNA de las dos, no ambas. Si eliges esta, deberás dotar de defensa artillera a toda la expedición.',
+          detalles: {
+            recompensa: 'Dinero y reputación con Helion',
+            dificultad: 'Alta',
+            requisitos: [
+              'Mod: Create: Big Cannons',
+              'Batería de cañones funcional en la sede de Dredge, capaz de apuntar y disparar',
+              'Montar también una batería de defensa funcional en cada una de las demás sedes',
+            ],
+            notas: 'Cada sede debe quedar con su propia batería operativa. Elige esta opción O la (1/2), nunca las dos.',
           },
         },
         // ── Misiones pendientes de activar ────────────────────────────────
@@ -202,17 +215,18 @@ export const codigosMisiones = {
     misiones: {
       principales: [
         {
-          titulo: 'Conectar la sede con la Torre Alba',
-          desc: 'Usando Tempad, Polaris debe mejorar la conexión entre la Torre Alba y su sede, de forma que cualquier jugador pueda viajar de una a otra sin dificultad.',
+          titulo: 'Conectar las sedes con la Torre Alba',
+          desc: 'Usando Tempad, Polaris debe tejer una red de teletransporte que enlace la Torre Alba con todas las sedes, de forma que cualquier jugador pueda viajar entre ellas sin dificultad.',
           detalles: {
             recompensa: 'Dinero y reputación con Helion',
             dificultad: 'Media',
             requisitos: [
               'Mod: Tempad',
               'Punto de teletransporte estable y de acceso público entre la Torre Alba y la sede de Polaris',
-              'Suministro de Chronons suficiente para mantenerlo operativo',
-              'Montar también un teletransporte desde otra sede hasta la Torre Alba, accesible para cualquier jugador',
+              'Montar teletransporte desde la Torre Alba hacia cada una de las demás sedes',
+              'Suministro de Chronons suficiente para mantener la red operativa',
             ],
+            notas: 'Todos los puntos deben ser de acceso público para cualquier jugador. El objetivo es que la Torre Alba quede conectada con cada sede de la expedición, no solo con la de Polaris.',
           },
         },
         // ── Misiones pendientes de activar ────────────────────────────────
