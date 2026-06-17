@@ -20,6 +20,8 @@ const metadata = {
    'golem.png':         { titulo: 'Golems Perdidos',         descripcion: 'Un golem perdido en el subsuelo' },
    'minion.png':        { titulo: 'Minion',        descripcion: 'Minion fiel amigo de RusikoElGuapiko', destacada: true },
    'sedeastra.png':     { titulo: 'Sede Astra',     descripcion: 'Aldeanos de la Sede Astra'},
+   'zzcasalyybrianali.png':{ titulo: 'Casa Provisional del Equipo Dredge',     descripcion: 'Pista: la explosion la causo un creeper' },
+   
   // 'Tuto.png':          { titulo: 'Tuto',          descripcion: '' },
   // 'zombie.png':        { titulo: 'Zombie',        descripcion: '' },
 }
